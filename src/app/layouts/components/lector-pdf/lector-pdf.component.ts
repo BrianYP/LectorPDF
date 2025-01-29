@@ -70,8 +70,9 @@ export class LectorPdfComponent {
 
   validateFile(file: File): boolean {
     const MAX_SIZE_MB = 10;
-    return file.type === "application/pdf" && file.size <= MAX_SIZE_MB * 1024 * 1024;
-  }
+    const allowedTypes = ["application/pdf", "image/tiff"];
+    return allowedTypes.includes(file.type) && file.size <= MAX_SIZE_MB * 1024 * 1024;
+  }  
 
 
   simulateUpload(): void {

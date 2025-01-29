@@ -12,7 +12,7 @@
       >
         <ng-container *ngIf="!selectedFile; else fileSelected">
           <p class="text-lg" [class.text-gray-600]="!isDragging" [class.text-purple-600]="isDragging">
-            {{ isDragging ? 'Suelta aquí tu archivo PDF' : 'Arrastra y suelta aquí tu archivo PDF' }}
+            {{ isDragging ? 'Suelta aquí tu archivo PDF o TIF' : 'Arrastra y suelta aquí tu archivo PDF' }}
           </p>
           <p class="text-sm text-gray-500 mt-2">O usa el botón de abajo para seleccionarlo desde tu dispositivo</p>
           <button
@@ -32,7 +32,7 @@
         </ng-template>
         <input
           type="file"
-          accept=".pdf"
+          accept=".pdf,.tif"
           class="hidden"
           #fileInput
           (change)="onFileSelected($event)"
